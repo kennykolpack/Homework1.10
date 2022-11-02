@@ -1,14 +1,18 @@
 public class Author {
-    String authorName;
-    public Author(String authorName) {
-        this.authorName = authorName;
+    private final String firstName;
+    private final String lastName;
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
     public String getAuthorName() {
-        return this.authorName;
+
+        return firstName + lastName;
     }
 
+    @Override
     public String toString() {
-        return this.authorName;
+        return " Имя: " + firstName + "Фамилия: " + lastName;
     }
     @Override
     public boolean equals(Object other) {
@@ -16,10 +20,10 @@ public class Author {
             return false;
         }
         Author sapkowski = (Author) other;
-        return authorName.equals(sapkowski.authorName);
+        return firstName.equals(sapkowski.firstName);
     }
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(authorName);
+        return java.util.Objects.hash(firstName);
     }
 }

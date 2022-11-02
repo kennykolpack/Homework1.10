@@ -1,6 +1,6 @@
 public class Book {
-    String title;
-    Author authorName;
+    private String title;
+    private final Author authorName;
     int yearPublishing;
 
     public Book(String title, Author authorName, int yearPublishing) {
@@ -11,12 +11,12 @@ public class Book {
 
     public String getTitle() {
 
-        return this.title;
+        return title;
     }
 
     public int getYearPublishing() {
 
-        return this.yearPublishing;
+        return yearPublishing;
     }
 
     public void setTitle(String title) {
@@ -29,8 +29,9 @@ public class Book {
         this.yearPublishing = yearPublishing;
     }
 
+    @Override
     public String toString() {
-        return "Книга " + this.title + ", автор: " +  this.authorName + ", год публикации: " + this.yearPublishing;
+        return "Книга " + title + "," + authorName + ", год публикации: " + yearPublishing;
     }
     @Override
     public boolean equals(Object other) {
